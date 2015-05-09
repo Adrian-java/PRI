@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="dbDao" class="com.eclinic.db.dao.DBDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="patientQuery" class="com.eclinic.db.query.PatientQuery">
+		<property name="patientDao" ref="dbDao" />
+	</bean>
+	<bean id="addressQuery" class="com.eclinic.db.query.AddressQuery">
+		<property name="addressDao" ref="dbDao" />
+	</bean>
+	<bean class="com.eclinic.db.query.DoctorQuery" id="doctorQuery">
+		<property name="doctorDao" ref="dbDao"></property>
+	</bean>
+	<bean class="com.eclinic.db.query.AdminQuery" id="adminQuery">
+		<property name="adminDao" ref="dbDao"></property>
+	</bean>
+	<bean class="com.eclinic.db.query.WorkerQuery" id="workerQuery">
+		<property name="workerDao" ref="dbDao"></property>
+	</bean>
+	<bean class="com.eclinic.db.query.SystemUserQuery" id="systemUserQuery">
+		<property name="userDao" ref="dbDao"></property>
+		<property name="passwordEncoder" ref="passwordEncoder"></property>
+	</bean>
+
+	<bean class="com.eclinic.rest.resources.HelloRestService" id="helloRest">
+		<property name="systemUserQuery" ref="systemUserQuery"></property>
+		<property name="userService" ref="userService"></property>
+	</bean>
+
+	<bean class="com.eclinic.modules.user.mangament.UserService" id="userService">
+		<property name="doctorQuery" ref="doctorQuery"></property>
+		<property name="workerQuery" ref="workerQuery"></property>
+		<property name="passwordEncoder" ref="passwordEncoder"></property>
+		<property name="systemUserQuery" ref="systemUserQuery"></property>
+		<property name="adminQuery" ref="adminQuery"></property>
+		<property name="patientQuery" ref="patientQuery"></property>
+		<property name="addressQuery" ref="addressQuery"></property>
+	</bean>
+
+</beans>

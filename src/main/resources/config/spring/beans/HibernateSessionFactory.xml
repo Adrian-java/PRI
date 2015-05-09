@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- Hibernate session factory -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+		<property name="annotatedClasses">
+		<list>
+	<!-- <value>com.mkyong.customer.model.Doctor</value> <value>com.mkyong.customer.model.Patient</value> 
+		<value>com.mkyong.customer.model.PatientCard</value> <value>com.mkyong.customer.model.Receptionist</value> 
+		<value>com.mkyong.customer.model.Recipe</value> <value>com.mkyong.customer.model.SickLeave</value> 
+		<value>com.mkyong.customer.model.Specialization</value> <value>com.mkyong.customer.model.StatusOfVisit</value> 
+		<value>com.mkyong.customer.model.TypeOfVisit</value> <value>com.mkyong.customer.model.Visit</value> -->
+	<value>com.eclinic.db.model.Specialization</value>
+	<value>com.eclinic.db.model.Permission</value>
+	<value>com.eclinic.db.model.Receptionist</value>
+	<value>com.eclinic.db.model.SickLeave</value>
+	<value>com.eclinic.db.model.SystemUser</value>
+	<value>com.eclinic.db.model.Graphic</value>
+	<value>com.eclinic.db.model.Visit</value>
+	<value>com.eclinic.db.model.LoginHistory</value>
+	<value>com.eclinic.db.model.Module</value>
+	<value>com.eclinic.db.model.Recipe</value>
+	<value>com.eclinic.db.model.Worker</value>
+	<value>com.eclinic.db.model.Address</value>
+	<value>com.eclinic.db.model.Patient</value>
+	<value>com.eclinic.db.model.VisitScheduler</value>
+	<value>com.eclinic.db.model.Admin</value>
+	<value>com.eclinic.db.model.PatientCard</value>
+	<value>com.eclinic.db.model.ApplicationParameter</value>
+	<value>com.eclinic.db.model.SpecalVisitField</value>
+	<value>com.eclinic.db.model.TypeOfUser</value>
+	<value>com.eclinic.db.model.TypeOfVisit</value>
+	<value>com.eclinic.db.model.StatusOfVisit</value>
+	<value>com.eclinic.db.model.Report</value>
+	<value>com.eclinic.db.model.Doctor</value>
+	<value>com.eclinic.db.model.SystemError</value>
+		</list></property>
+	</bean>
+</beans>

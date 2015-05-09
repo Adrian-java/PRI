@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">qwe456</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/eclinic</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.search.autoregister_listeners">false</property>
+        <property name="hibernate.validator.apply_to_ddl">false</property>
+        <mapping class="com.eclinic.db.model.Specialization" />
+        <mapping class="com.eclinic.db.model.Permission" />
+        <mapping class="com.eclinic.db.model.Receptionist" />
+        <mapping class="com.eclinic.db.model.SickLeave" />
+        <mapping class="com.eclinic.db.model.SystemUser" />
+        <mapping class="com.eclinic.db.model.Graphic" />
+        <mapping class="com.eclinic.db.model.Visit" />
+        <mapping class="com.eclinic.db.model.LoginHistory" />
+        <mapping class="com.eclinic.db.model.Module" />
+        <mapping class="com.eclinic.db.model.Recipe" />
+        <mapping class="com.eclinic.db.model.Worker" />
+        <mapping class="com.eclinic.db.model.Address" />
+        <mapping class="com.eclinic.db.model.Patient" />
+        <mapping class="com.eclinic.db.model.VisitScheduler" />
+        <mapping class="com.eclinic.db.model.Admin" />
+        <mapping class="com.eclinic.db.model.PatientCard" />
+        <mapping class="com.eclinic.db.model.ApplicationParameter" />
+        <mapping class="com.eclinic.db.model.SpecalVisitField" />
+        <mapping class="com.eclinic.db.model.TypeOfUser" />
+        <mapping class="com.eclinic.db.model.TypeOfVisit" />
+        <mapping class="com.eclinic.db.model.StatusOfVisit" />
+        <mapping class="com.eclinic.db.model.Report" />
+        <mapping class="com.eclinic.db.model.Doctor" />
+        <mapping class="com.eclinic.db.model.SystemError" />
+    </session-factory>
+</hibernate-configuration>

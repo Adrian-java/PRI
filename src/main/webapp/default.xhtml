@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<ui:composition template="/WEB-INF/template/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+	<ui:define name="content">
+
+		<h1>JSF 2.0 + Spring + Hibernate Example</h1>
+
+		<h:dataTable value="#{customer.getAllStatus()}" var="c"
+			styleClass="order-table" headerClass="order-table-header"
+			rowClasses="order-table-odd-row,order-table-even-row">
+
+			<h:column>
+				<f:facet name="header">
+    				Customer ID
+    			</f:facet>
+    				#{c.id}
+    		</h:column>
+
+			<h:column>
+				<f:facet name="header">
+    				Name
+				</f:facet>
+    				#{c.type}
+    		</h:column>
+
+		</h:dataTable>
+		<h:form>
+			<p:outputLabel value="Min Length (3):" for="acMinLength" />
+			<p:autoComplete id="acMinLength" minQueryLength="3"
+				value="#{customer.txt2}" completeMethod="#{customer.completeText}"
+				effect="fade" />
+		</h:form>
+		<!-- <h2>Add New Customer</h2>
+		<h:form>
+
+			<h:panelGrid columns="3">
+			
+				Name : 
+				<h:inputText id="name" value="#{customer.name}" size="20"
+					required="true" label="Name">
+				</h:inputText>
+
+				<h:message for="name" style="color:red" />
+			
+				Address : 
+				<h:inputTextarea id="address" value="#{customer.address}" cols="30"
+					rows="10" required="true" label="Address">
+				</h:inputTextarea>
+
+				<h:message for="address" style="color:red" />
+
+			</h:panelGrid>
+
+			<h:commandButton value="Submit" action="#{customer.addCustomer()}" />
+
+		</h:form> -->
+
+	</ui:define>
+</ui:composition>
