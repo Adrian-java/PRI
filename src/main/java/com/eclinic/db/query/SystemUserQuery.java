@@ -1,5 +1,7 @@
 package com.eclinic.db.query;
 
+import java.util.Date;
+
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.eclinic.db.dao.DBDao;
@@ -24,6 +26,19 @@ public class SystemUserQuery {
 	public boolean addUser(SystemUser su) {
 		su.setPassword(this.passwordEncoder.encode(su.getPassword()));
 		return userDao.add(su, SystemUser.class.getName());
+	}
+	public boolean deleteUser(int id) {
+		SystemUser su = new SystemUser();
+		su.setId((long) id);
+		try{
+		SystemUser s =  userDao.findByExample(su, SystemUser.class).get(0);
+		s.setIsActive(false);
+		s.setUnregisterDate(new Date());
+		return userDao.update(s);
+		}
+		catch(Exception e){
+			return false;
+		}
 	}
 
 	public DBDao<SystemUser> getUserDao() {

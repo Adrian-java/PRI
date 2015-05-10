@@ -7,11 +7,12 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 public class DBDao<T> extends HibernateDaoSupport {
 
-	public void delete(T persistentInstance) {
+	public boolean delete(T persistentInstance) {
 		try {
 			getSession().delete(persistentInstance);
+			return true;
 		} catch (RuntimeException re) {
-			throw re;
+			return false;
 		}
 	}
 

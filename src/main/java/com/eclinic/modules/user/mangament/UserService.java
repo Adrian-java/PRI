@@ -50,6 +50,8 @@ public class UserService implements UserDetailsService {
 		workerQuery.addWorker(systemUser.getWorker());
 		return systemUserQuery.addUser(systemUser);
 	}
+	
+	
 
 	public SystemUserQuery getSystemUserQuery() {
 		return systemUserQuery;

@@ -19,7 +19,7 @@ import com.eclinic.modules.user.mangament.UserService;
 
 @Named
 @Path("/add")
-public class HelloRestService {
+public class UserAdd {
 
 	private SystemUserQuery systemUserQuery;
 	@Autowired

@@ -28,7 +28,11 @@
 		<property name="passwordEncoder" ref="passwordEncoder"></property>
 	</bean>
 
-	<bean class="com.eclinic.rest.resources.HelloRestService" id="helloRest">
+	<bean class="com.eclinic.rest.resources.UserAdd" id="userAdd">
+		<property name="systemUserQuery" ref="systemUserQuery"></property>
+		<property name="userService" ref="userService"></property>
+	</bean>
+	<bean class="com.eclinic.rest.resources.UserDelete" id="userDelete">
 		<property name="systemUserQuery" ref="systemUserQuery"></property>
 		<property name="userService" ref="userService"></property>
 	</bean>

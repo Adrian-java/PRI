@@ -42,6 +42,7 @@ public class SystemUser implements java.io.Serializable, UserDetails {
 	private String password;
 	private byte[] description;
 	private Date registerDate;
+	private Date unregisterDate;
 	private Boolean isActive;
 	private Boolean changedPassword;
 	private String email;
@@ -198,6 +199,16 @@ public class SystemUser implements java.io.Serializable, UserDetails {
 	@Transient
 	public boolean isEnabled() {
 		return true;
+	}
+
+	@Temporal(TemporalType.DATE)
+	@Column(name = "unregister_date", nullable = true, length = 10)
+	public Date getUnregisterDate() {
+		return unregisterDate;
+	}
+
+	public void setUnregisterDate(Date unregisterDate) {
+		this.unregisterDate = unregisterDate;
 	}
 
 }
