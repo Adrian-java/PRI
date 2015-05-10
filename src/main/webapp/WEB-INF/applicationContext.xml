@@ -45,7 +45,7 @@
 		<security:intercept-url method="PUT" pattern="/rest/**"
 			access="hasRole('admin')" />
 		<security:intercept-url method="POST" pattern="/rest/**"
-			access="hasRole('admin')" />
+			access="permitAll" />
 		<security:intercept-url method="DELETE"
 			pattern="/rest/news/**" access="hasRole('admin')" />
 	</security:http>

@@ -13,17 +13,12 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 		</property>
 		<property name="hibernateProperties">
 			<props>
-				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</prop>
 				<prop key="hibernate.show_sql">true</prop>
 			</props>
 		</property>
 		<property name="annotatedClasses">
 		<list>
-	<!-- <value>com.mkyong.customer.model.Doctor</value> <value>com.mkyong.customer.model.Patient</value> 
-		<value>com.mkyong.customer.model.PatientCard</value> <value>com.mkyong.customer.model.Receptionist</value> 
-		<value>com.mkyong.customer.model.Recipe</value> <value>com.mkyong.customer.model.SickLeave</value> 
-		<value>com.mkyong.customer.model.Specialization</value> <value>com.mkyong.customer.model.StatusOfVisit</value> 
-		<value>com.mkyong.customer.model.TypeOfVisit</value> <value>com.mkyong.customer.model.Visit</value> -->
 	<value>com.eclinic.db.model.Specialization</value>
 	<value>com.eclinic.db.model.Permission</value>
 	<value>com.eclinic.db.model.Receptionist</value>

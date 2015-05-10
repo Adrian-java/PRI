@@ -19,13 +19,13 @@ import org.springframework.web.filter.GenericFilterBean;
 public class AuthenticationTokenProcessingFilter extends GenericFilterBean
 {
 
-//	private final UserDetailsService userService;
+	private final UserDetailsService userService;
 	
 
 
 	public AuthenticationTokenProcessingFilter(UserDetailsService userService)
 	{
-//		this.userService = userService;
+		this.userService = userService;
 	}
 
 
@@ -40,7 +40,7 @@ public class AuthenticationTokenProcessingFilter extends GenericFilterBean
 		if (userName != null) {
 
 			
-			UserDetails userDetails = null;//this.userService.loadUserByUsername(userName);
+			UserDetails userDetails =this.userService.loadUserByUsername(userName);
 
 			if (TokenUtils.validateToken(authToken, userDetails)) {
 

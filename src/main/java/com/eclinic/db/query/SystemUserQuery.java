@@ -14,7 +14,11 @@ public class SystemUserQuery {
 	public SystemUser getUserByName(String name) {
 		SystemUser instance = new SystemUser();
 		instance.setLogin(name);
+		try{
 		return userDao.findByExample(instance, SystemUser.class).get(0);
+		} catch(Exception e){
+			return null;
+		}
 	}
 
 	public boolean addUser(SystemUser su) {

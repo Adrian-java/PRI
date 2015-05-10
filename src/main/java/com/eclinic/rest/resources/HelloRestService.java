@@ -11,6 +11,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.eclinic.db.model.SystemUser;
 import com.eclinic.db.query.SystemUserQuery;
 import com.eclinic.modules.user.mangament.UserService;
@@ -20,6 +22,7 @@ import com.eclinic.modules.user.mangament.UserService;
 public class HelloRestService {
 
 	private SystemUserQuery systemUserQuery;
+	@Autowired
 	private UserService userService;
 
 	@POST

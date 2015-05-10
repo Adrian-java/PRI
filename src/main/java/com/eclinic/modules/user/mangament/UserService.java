@@ -28,10 +28,7 @@ public class UserService implements UserDetailsService {
 			throws UsernameNotFoundException {
 
 		SystemUser su = systemUserQuery.getUserByName(username);
-		User ud = new User();
-		ud.setName("admin");
-		ud.setPassword(this.passwordEncoder.encode("admin"));
-		return ud;
+		return su;
 	}
 
 	public boolean addAdmin(SystemUser systemUser) {

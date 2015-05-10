@@ -33,7 +33,7 @@
 		<property name="userService" ref="userService"></property>
 	</bean>
 
-	<bean class="com.eclinic.modules.user.mangament.UserService" id="userService">
+	<bean class="com.eclinic.modules.user.mangament.UserService" id="userService" lazy-init="true">
 		<property name="doctorQuery" ref="doctorQuery"></property>
 		<property name="workerQuery" ref="workerQuery"></property>
 		<property name="passwordEncoder" ref="passwordEncoder"></property>
