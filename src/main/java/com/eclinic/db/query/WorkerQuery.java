@@ -8,7 +8,7 @@ public class WorkerQuery {
 private DBDao<Worker> workerDao;
 	
 	public boolean addWorker(Worker d){
-		return workerDao.add(d, Worker.class.getName());
+		return workerDao.save(d, Worker.class.getName());
 	}
 
 	public DBDao<Worker> getWorkerDao() {

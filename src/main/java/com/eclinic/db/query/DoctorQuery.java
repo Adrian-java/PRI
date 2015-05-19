@@ -39,7 +39,7 @@ public class DoctorQuery {
 		
 	}
 	public boolean addDoctor(Doctor d){
-		return doctorDao.add(d, Doctor.class.getName());
+		return doctorDao.save(d, Doctor.class.getName());
 	}
 
 	public DBDao<Doctor> getDoctorDao() {

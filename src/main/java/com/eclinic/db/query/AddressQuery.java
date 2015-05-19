@@ -8,7 +8,7 @@ public class AddressQuery {
 	private DBDao<Address> addressDao;
 
 	public boolean addAddress(Address d) {
-		return addressDao.add(d, Address.class.getName());
+		return addressDao.save(d, Address.class.getName());
 	}
 
 	public DBDao<Address> getAddressDao() {

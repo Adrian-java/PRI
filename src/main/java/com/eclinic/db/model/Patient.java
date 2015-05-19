@@ -84,7 +84,7 @@ public class Patient implements java.io.Serializable {
 		this.id = id;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_address", nullable = false)
 	public Address getAddress() {
 		return this.address;

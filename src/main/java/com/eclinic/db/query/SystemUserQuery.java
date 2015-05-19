@@ -25,7 +25,7 @@ public class SystemUserQuery {
 
 	public boolean addUser(SystemUser su) {
 		su.setPassword(this.passwordEncoder.encode(su.getPassword()));
-		return userDao.add(su, SystemUser.class.getName());
+		return userDao.save(su, SystemUser.class.getName());
 	}
 	public boolean deleteUser(int id) {
 		SystemUser su = new SystemUser();
@@ -34,7 +34,7 @@ public class SystemUserQuery {
 		SystemUser s =  userDao.findByExample(su, SystemUser.class).get(0);
 		s.setIsActive(false);
 		s.setUnregisterDate(new Date());
-		return userDao.update(s);
+		return userDao.save(s, SystemUser.class.getName());
 		}
 		catch(Exception e){
 			return false;

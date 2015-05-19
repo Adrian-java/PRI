@@ -8,7 +8,7 @@ public class AdminQuery {
 private DBDao<Admin> adminDao;
 	
 	public boolean addAdmin(Admin d){
-		return adminDao.add(d, Admin.class.getName());
+		return adminDao.save(d, Admin.class.getName());
 	}
 
 	public DBDao<Admin> getAdminDao() {

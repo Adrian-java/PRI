@@ -35,7 +35,7 @@ public class PatientQuery {
 	}
 	
 	public Boolean addPatient(Patient p){
-		return patientDao.add(p, Patient.class.getName());
+		return patientDao.save(p, Patient.class.getName());
 	}
 
 	public DBDao<Patient> getPatientDao() {
